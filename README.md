@@ -8,7 +8,7 @@ As an example, let's say that you have an BaseAnimal interface, which is subtype
 
 ## Motivation
 
-Object databases have never caught on in the mainstream. One reason they didn't catch on was that object databases were often coupled to a particular type system, e.g. a type system of a particular programming language or a custom type system.
+Object databases have never caught on in the mainstream. One reason is that they were often coupled to a particular type system, e.g. a type system of a particular programming language or a custom type system.
 
 The ubiquity of JSON and use of Javascript on the web along with the rising popularity of Typescript might represent a new opportunity for a Typescript-based object database. In addition, the rise of key/value stores as the underlying storage for many modern databases creates a pathway for creating an object database that fundamentally might not look that different than the implementation of modern relational databases.
 
