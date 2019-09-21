@@ -8,6 +8,10 @@ export interface EncodeOptions {
 const makeKey = (type: string, id: string, path: string[], ts: number) =>
   `${type}/${id}/${path.join("/")}/${ts}`;
 
+const extractPath = (key: string): string[] =>
+  // key is in the form of type/id/...path/timestamp -- we want to extract the path
+  key.split("/").slice(2, key.split("/").length - 1);
+
 class NoPrimaryKey extends Error {}
 
 // encode an object into an array of key/value pairs
@@ -51,7 +55,6 @@ export const encode = (data: object, ts: number, options?: EncodeOptions) => {
 // decode key/value pairs into an object
 export const decode = (keyValues: [string, string][]) =>
   keyValues.reduce((result, [key, value]) => {
-    // key is in the form of type/id/...path/timestamp -- we want to extract the path
-    const path = key.split("/").slice(2, key.split("/").length - 1);
+    const path = extractPath(key);
     return set(result, path, JSON.parse(value));
   }, {});
