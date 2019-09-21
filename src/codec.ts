@@ -10,6 +10,7 @@ const makeKey = (type: string, id: string, path: string[], ts: number) =>
 
 class NoPrimaryKey extends Error {}
 
+// encode an object into an array of key/value pairs
 export const encode = (data: object, ts: number, options?: EncodeOptions) => {
   const primaryKey =
     // try a bunch of possibilities for the primary key
@@ -47,6 +48,7 @@ export const encode = (data: object, ts: number, options?: EncodeOptions) => {
   return keyValues;
 };
 
+// decode key/value pairs into an object
 export const decode = (keyValues: [string, string][]) =>
   keyValues.reduce((result, [key, value]) => {
     const path = key.split("/").slice(2, key.split("/").length - 1);
