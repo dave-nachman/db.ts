@@ -51,6 +51,7 @@ export const encode = (data: object, ts: number, options?: EncodeOptions) => {
 // decode key/value pairs into an object
 export const decode = (keyValues: [string, string][]) =>
   keyValues.reduce((result, [key, value]) => {
+    // key is in the form of type/id/...path/timestamp -- we want to extract the path
     const path = key.split("/").slice(2, key.split("/").length - 1);
     return set(result, path, JSON.parse(value));
   }, {});
