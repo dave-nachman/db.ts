@@ -4,8 +4,10 @@ Interface for pluggable storage engines
 If an operation fails, an error should be thrown
 */
 export interface StorageEngine {
-  // if get is missing, return undefined
+  // if key is missing, return undefined
   get(key: string): Promise<string | undefined>;
+
+  // get keys by a prefix
   getPrefix(key: string): Promise<KeyValue[]>;
 
   put(key: string, value: string): Promise<void>;
