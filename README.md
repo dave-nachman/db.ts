@@ -14,7 +14,7 @@ The ubiquity of JSON and use of Javascript on the web along with the rising popu
 
 ## Example
 
-```
+```ts
 import * as t from "io-ts";
 
 import { getEntityManager } from "../entity-manager";
