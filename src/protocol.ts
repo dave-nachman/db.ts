@@ -63,13 +63,12 @@ export interface AckMessage extends AbstractServerMessage {
 }
 
 export interface FailureMessage extends AbstractServerMessage {
-  kind: "failure";g
+  kind: "failure";
   id: string;
   payload: {
     clientMessageId: string;
     value: string;
   };
 }
-
 
 export type ServerMessage = AckMessage | FailureMessage;
