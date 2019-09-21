@@ -22,6 +22,10 @@ export interface Operations {
 
 class NoTypeError extends Error {}
 
+/*
+If an object has multiple valid types, it is only stored as one type ("primary type"),
+and a "redirect" is stored as a pointer for other types ("secondary types")
+*/
 const redirectKey = {
   get: (typeId: string, id: string, ts: number) =>
     `${typeId}/${id}/__redirect/${ts}`,
@@ -93,6 +97,7 @@ export const createOperations = (
         `${typeManager.getTypeId(type)}/${key}`
       );
 
+      // if it is a redirect, go look it up
       if (redirectKey.validate(keyValues.map(([key]) => key)[0])) {
         const [redirectTypeId, redirectKey] = JSON.parse(keyValues[0][1]).split(
           "/"
