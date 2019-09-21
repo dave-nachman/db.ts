@@ -2,7 +2,7 @@
 
 This is a pre-alpha work-in-progress prototype of an _object database_ that utilizes Typescript's type system. Unlike a relational database, which is table-oriented, an object database represents data in an object-oriented manner.
 
-db.ts supports Typescript interfaces, types, and classes, including subtype relationships. db.ts leverages [io-ts](https://github.com/gcanti/io-ts), a run-time type system library for Typescript, for run-time representations of Typescrpt types. 
+db.ts supports Typescript interfaces, types, and classes, including subtype relationships. db.ts leverages [io-ts](https://github.com/gcanti/io-ts), a run-time type system library for Typescript, for run-time representations of Typescript types. 
 
 db.ts has a pluggable storage key/value abstraction and provides a default persistent storage implementation via [RocksDB](https://rocksdb.org/).
 
