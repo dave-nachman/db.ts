@@ -12,6 +12,8 @@ Object databases have never caught on in the mainstream. One reason they didn't 
 
 The ubiquity of JSON and use of Javascript on the web along with the rising popularity of Typescript might represent a new opportunity for a Typescript-based object database. In addition, the rise of key/value stores as the underlying storage for many modern databases creates a pathway for creating an object database that fundamentally might not look that different than the implementation of modern relational databases.
 
+On a personal level, this project is an opportunity for me to learn more about database implementation while creating something a little outside the box.
+
 ## Example
 
 ```ts
