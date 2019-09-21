@@ -17,6 +17,8 @@ export interface Operations {
     time?: number;
   }): Promise<object>;
   readAll(input: { type: t.Type<object>; time?: number }): Promise<object[]>;
+  
+  // return a new Operations object at the current timestamp with the additional type definition
   addType(type: t.Type<object>): Promise<Operations>;
 }
 
