@@ -4,7 +4,7 @@ This is a pre-alpha work-in-progress prototype of an _object database_ that util
 
 db.ts supports Typescript interfaces, types, and classes, including subtype relationships. db.ts leverages [io-ts](https://github.com/gcanti/io-ts), a run-time type system library for Typescript, for run-time representations of Typescrpt types. 
 
-db.ts has a pluggable storage key/value abstraction and provides a default storage implementation via [RocksDb](https://rocksdb.org/).
+db.ts has a pluggable storage key/value abstraction and provides a default storage implementation via [RocksDB](https://rocksdb.org/).
 
 As an example, let's say that you have an BaseAnimal interface, which is subtyped by a Dog and Cat interface, which together compose a union type of CommonAnimal. Using db.ts, you can query instances using any of those four types.
 
