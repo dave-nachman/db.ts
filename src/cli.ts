@@ -1,14 +1,13 @@
 import program from "commander";
 import repl from "repl";
 
-import * as t from "io-ts";
-
 import { createClient } from "./client";
 import { createOperations } from "./operations";
 import { createServer } from "./server";
 import { createSimpleStorage } from "./storage";
 
 program.command("server").action(() => {
+  // this will need to be configurable
   const store = createSimpleStorage();
   const operations = createOperations(store, []);
 
